@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bestiary Weekly Thought</title>
+  <style>
+    body {
+      font-family: Helvetica, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 20px;
+      height: 100vh; /* Ensures the body takes the full viewport height */
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between; /* Space out items */
+      align-items: center; /* Centers the content horizontally */
+      background: linear-gradient(135deg, #94c098, #fe5347);
+      color: white;
+    }
+header {
+      text-align: center;
+      margin-top: 10px; /* Brings title close to the top */
+    }
+    h1 {
+      font-size: 7em; /* Large title size */
+      letter-spacing: 1px; /* Space between letters */
+      line-height: .9; /* Adjusts line spacing */
+      margin: 3px 0;
+    }
+    h2 {
+      font-size: 1.4em; /* Smaller than the main title */
+      font-weight: normal; /* Optional: make it less bold */
+      color: #white; /* A softer color than the main title */
+margin: 0;      
+margin-bottom: 20px; /* Adds space below the subtitle */
+    }
+    #phrase {
+font-size: 1.2em;
+      margin: 20px auto;
+      padding: 20px;
+      border: 0px solid #ccc;
+      border-radius: 10px;
+      background-color: ;
+      color: white;
+      max-width: 600px; /* Limits the width for better readability */
+      text-align: center; /* Centers text within the quote box */
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 1em;
+      background-color: #fe5347;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+margin: 20px auto 40px;
+    }
+    button:hover {
+      background-color: #white;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <h1> BESTIARY<br>THOUGHTS</h1>
+<h2>A tool for thinking about animals</h2>
+</header>
+  <div id="phrase">Welcome</div>
+  <button onclick="generateQuote()">Click for a New Thought 🐊</button>
+
+  <script>
+    // Array of quotes
+    const quotes = [
+      "Myth transforms history into nature.  -Roland Barthes",
+    "The animal becomes a visual shorthand, a symbol whose complexity is flattened for the sake of communication.  -Jonathan Burt",
+    "In contemporary culture, the animal often serves as a standin for human virtues, vices, and fantasies, erasing its own reality.  -Steve Baker, Picturing the Beast",
+    "The commodification of the animal denies its individuality, making it a vessel for human projections. -Donna Haraway",
+    "Once a friend came to visit and said, looking out on the soothing view; 'and it would have to be a white horse; the very image of freedom'. And I thought, yes, the animals are forced to become for us merely ‘images’ of what they once so beautifully expressed. -Alice Walker, ‘Am I Blue?’",
+"Of course, the behavior of lions may be the least interesting thing about them. In the way of symbols, lions are pretty near the top of the tree. But would anyone have followed Richard the Lionhart if they had known how similar lions’ behavior is to that of the common house cat? -Justin Cartwright",
+"It was a comment on human nature that the concept of ‘animality’ was devised. -Keith Thomas",
+"As I grew up I became more and more bewildered by the way people used to speak and think about animals, and I began to wonder, first in childish terms and later as a university educated adult, how on earth our society had arrived at its subject-object attitude toward animals. Contrary to current notions about humans and animals I never once felt myself to be a superior human subject dealing with an inferior and passive animal object. -Barbara Noske, Humans and Other Animals",
+"Sentiments about animals are typically projections of attitudes to humans; that the contrasting of humans and animals invariably serves as an analogy for the relation of those regarded by a particular society as insiders or outsiders; and that some societies have arrogantly appropriated the name ‘human’ for themselves while giving neighboring groups derogatory animal names. -Steve Baker, Picturing the Beast",
+"It seems modern Western culture more than any other emphasizes the ‘Otherness’ of the nonhuman. By drawing a sharp dividing line between human and nonhuman, a vast gap is created between subject (the free acting human agent) and the object (the passive acted upon thing).",
+"The idea that humans are metaphorically indispensable to humankind has certain attractions, because it proposes a relation between humans and animals which is not necessarily and exploitative one, nor one which necessarily works by denigrating the animals. -John Berger, Animals as Metaphor",
+"Sometimes animals are idealized as models of order and morality. Sometimes animals are represented at the Other, the Beast, the Brute, the model of disorder and the way things should not be done. -Steve Baker, Picturing the Beast", 
+"The term animal is associated with uncivilized behavior and socially disapproved behavior. Criminals, hoodlums, and punks are described as animals that deserve to be punished if justice is to prevail. Animal represents a violation of social norms. -Steve Baker, Picturing the Beast",
+"If you want to clear out a room of Derrideans, mention Beatrix Potter without sneering. -Ursula K LeGuin",
+"Animals quite obviously cannot and do not represent themselves to human viewers. It is man who defines and represents them, and he can in no sense claim to achieve a true representation of any particular animal; it merely reflects his own concerns. -Bob Mullan & Garry Marvin, Zoo Culture",
+"A \'feral\' animal is one that exists in an ecosystem where they are considered out of place. Because of this, feral animal voices are often described as “noise.” -Kristine Hill, Uncivilized Behaviors.",
+"Neoteny refers to a condition in which there is retention of youthful characteristics in adult form. Large eyes, rounded cheeks, short limbs result in a \‘lovable\’ object. Doll and toy manufacturers intuitively grasped this \‘cuteness\’ principle long ago in relation to animal products. -Steve Baker, Picturing the Beast",
+"Animals are preserved solely for human benefit, because human beings have decided they want them to exist for human pleasure. -Bob Mullan and Garry Marvin, Zoo Culture",
+"A real crocodile can be found in the zoo and as a rule it is dozing or hiding, but Disneyland tells us that faked nature corresponds much more to our daydream demands. -Umberto Eco",
+"Neither Disneyland or the zoo will satisfy the demand for a morally or politically correct image of animals, an image of animals as they should be seen, of animals running free in our imaginary mythical wild. -Umberto Eco",
+"We\’ve had a very arrogant assumption of human superiority and I think that\’s what we’ve got to change. -Jane Goodall",
+"In the past, families of all classes kept domestic animals because they served a useful purpose guard dogs, hunting dogs, micekilling cats, and so on. The practice of keeping animals regardless of their usefulness, the keeping, exactly, of pets (in the 16th century the word usually referred to a lamb raised by had) is a modern innovation, and, on the social scale on which it exists today, is unique. It is part of that universal but personal withdrawal into the private small family unit, decorated or furnished with mementoes from the outside world. -John Berger, Why Look at Animals?",
+"Animals are always observed. The fact that they can observe us has lost all significance. -John Berger, Why Look at Animals?",
+"Animals are objects of our everextending knowledge. What we know about the, is an index of our power, and thus an index of what separates us from the. The more we know, the further away they are. -John Berger, Why Look at Animals?",
+"Everywhere animals disappear. In zoos they constitute the living monument to their own disappearance. -John Berger, Why Look at Animals?",
+"The belief that \'animals\' are superior or inferior to humans because they live in an eternal now is untrue, because no being lives in a now. -Timothy Morton",
+"All beings are equal, but some beings are more equal than others. -Timothy Morton",
+"Animals are a lexicon of metaphor. They are a vocabulary apart from being living independent creatures.", 
+"Put an animal in a story and it is never just an animal. -Mark Haddon, Dirk, Dolly and Dolores",
+"If a lion could talk, we could not understand him. -Ludwig Wittgenstein, Philosophical Investigations",
+"Or maybe zoos are not just libraries where each pen, each cage, each enclosure is a volume from which valuable information should be extracted. Maybe zoos are not just storehouses of the exotic. -Mark Haddon, Dirk, Dolly and Dolores",
+"We can understand, too, that natural species are chosen not because they are 'good to eat' [bonnes à manger] but because they are 'good to think' [bonnes à penser]. -Claude Levi-Strauss, Totemism",
+"Haribo\'s Gummi bears are junk food for children, but they are also a story about bears, about nature, and about ourselves. Andrew McCumber and Patrick Neil Dryden, The Bestiary in the Candy Aisle",
+"The bestiary in its original form is gone, but contemporary culture continues to catalog animals and in so doing assign them meaning, though that meaning making may go unnoticed. -Andrew McCumber and Patrick Neil Dryden, The Bestiary in the Candy Aisle",
+"Ever since 1902, when animal crackers were first mass-produced by the National Biscuit Company, the food-industrial complex has been targeting children with edible items fashioned as covetable objects. -Kalman and Hall, Eat Me",
+"Nabisco once released a limited edition \'Endangered Collection\' of Animal Crackers featuring Komodo dragons, peregrine falcons, Hawaiian monk seals, and Bactrian camels. When asked whether there was \'something weird about eating these near sacred animals,\' a product manager replied:\'Of course, what do people like about Animal Crackers? Biting off the heads! Our hope was that children will line them up, match them up with the names on the box, learn about them, and then decapitate them.\' -Andrew McCumber and Patrick Neil Dryden, The Bestiary in the Candy Aisle",
+"To see a jaguar is to be seen by a jaguar. Seeing is always reciprocal, and in this reciprocity, a certain form of personhood emerges. -Eduardo Kohn, How Forests Think",
+"An anthropology beyond the human must not only decenter the human but also learn to think with other forms of life that are themselves thinking beings. -Eduardo Kohn, How Forests Think",
+"The world continually emerges through the activities of its inhabitants, human and nonhuman alike. We do not dwell in a preexisting world; we create it through our movements, perceptions, and interactions. -Tim Ingold, The Perception of the Environment",
+"Anthropomorphism creates empathy but often erases the \'animalness\' of the depicted creatures, turning them into mirrors of human concerns rather than representations of their own worlds.",
+"The animal has been transformed into spectacle. Instead of being seen as a cohabitant of the Earth, the animal is reduced to an object of the human gaze, a cipher for human concerns. -John Berger, Why Look at Animals?",
+"Animals are not just symbols or metaphors; they are coshapers of shared worlds. To represent them responsibly is to recognize their agency and their role in shaping our lives and histories. -Donna Haraway, When Species Meet",
+"To represent animals is to grapple with the limits of human language and vision, to acknowledge the creaturely vulnerability that binds all living beings. -Anat Pick, Creaturely Poetics",
+"The tiger that roams my dreams<br>is not the tiger of flesh.<br>It is a symbol of the eternal,<br>of what eludes my grasp. -Jorge Luis Borges, Dreamtigers",
+"Tyger Tyger, burning bright,<br>In the forests of the night;<br>What immortal hand or eye,<br>Could frame thy fearful symmetry? -William Blake, Songs of Experience",
+"A stuffed animal, for instance, is not just a memento of nature; it becomes an idealized version, frozen in time, and in many cases, more alive in death than it ever was in life. -Umberto Eco",
+"Imaginary animals are not less real than their counterparts in the natural world; they inhabit the landscapes of our collective psyche, serving as mirrors of human creativity and fear. -Umberto Eco",
+"The uncanny valley, where fake animals (like CGI characters in films or robotic animals) are close to the real thing but not quite right, creates a profound dissonance. It speaks to our anxieties about artificial life where humanity\'s technological interventions into nature (like cloning, genetic modification, or bioengineering) blur the line between \'real\' and \'fake\' animals. -Mark Fisher",
+"What we call nature is a story we tell about the world, an ongoing and inevitably incomplete narrative that is not limited by the human experience. -Barbara Herrnstein Smith",
+"Animals are the metaphors we use to express ourselves. In them, we see our best and worst qualities, our desires and fears. -Umberto Eco",
+"We are in the Anthropocene, and as a result, many species of animals are dying out. But the Anthropocene is not just the end of something—it's a new beginning, and in this new world, the fate of animals and humans will be intertwined. -Timothy Morton",
+"Animals are uncanny because they remind us of what we are, but also of what we are not. We think we know them, but when we look closely, they are always strange, always other. -Timothy Morton",
+"To see an animal is to experience a kind of aesthetic shock. We can no longer simply project our ideas onto it; we must encounter it as a being in its own right. -Timothy Morton",
+"The animal, in the field of comedy, is the one who remains foreign, the one who does not belong to our human order, but through its absurdity, it forces us to reconsider our own human limitations. -Alenka Zupančič",
+"Humans need the animal as a mirror for what they are not, for their own desire to escape human sociality. The animal is simultaneously the \'other\' and the \'self\' projected. -Alenka Zupančič",
+"Anthropomorphism is not an innocent process— it’s a way of making the animal serve human ends, erasing the animal\’s own existence. -Donna Haraway",
+"The animal in advertising is never just an animal; it is a fantasy construct, a way of thinking about the human. -Steve Baker",
+"The animal in art or language is rarely the animal in itself— it is a construction that tells us more about ourselves than about the creature. -Vicki Hearne",
+"The cute animal image makes us feel connected, but it is a form of consumer escapism. -Timothy Morton",
+"I think of what wild animals are in our imaginations. And how they are disappearing– not just from the wild, but from people\’s everyday lives, replaced by images of themselves in print and on screen. The rarer they get, the fewer meanings animals can have. Eventually rarity is all they are made of. —Helen Macdonald",
+"Nature (and the animals contained within the concept of nature) is not a fixed entity, but rather a dynamic process, shaped by our perception and interpretation of it.",
+"Animals in advertising act as conduits for emotional connection, but the connection is always mediated by consumerism. -Jonathan Burt, Animals in Film",
+"Cartoon animals have the ability to simultaneously reflect human behavior and amplify its absurdities, which makes them a mirror for both human desires and our inability to fully control them. -Carl Platinga",
+"As the philosopher Thomas Nagel explained, the only way to know what it is like to be a bat is to be a bat. But the imagining? The attempt? That is a good and important thing. It forces you to think about what you don/’t know about the creature: what it eats, where it lives, how it communicates with others. -Helen McDonald",
+"None of us see animals clearly. They’re too full of the stories we’ve given them. Encountering them is an encounter with everything you/’ve ever learned about them from previous sightings, from books, images, conversations. -Helen McDonald",
+"If domestication is about control, wildness and ferality are the loss of that control. Animals out of control are defined in part by where they find themselves as well as how closely connected to humanity they remain. Some species find themselves in an undefined space – not quite feral, not quite domesticated, but something rather unique. -Kristine Hill, Uncivilized Behavior",
+"Animals who have never been domesticated are not referred to as feral, even upon escape or release to the wild. A prime example can be found in the wild areas of Florida. Reptiles are called ’exotic pets’ when kept in captivity, and when they escape they simply become non-native nuisance animals. -Kristine Hill, Uncivilized Behavior",
+"In the era of social media, animals are increasingly reduced to 'content'—commodities to be consumed and circulated in virtual spaces. Whether it/’s a viral video of a dog performing a trick or a 'cute' animal meme circulating on Instagram, the deeper ethical questions of what it means for an animal to be reduced to a mere object of entertainment are often overlooked. In a culture where entertainment has become the dominant mode of interaction, animals, like everything else, are increasingly 'content-ized,' their individuality erased in favor of spectacle. What does it mean for the very possibility of ethical relations with other species when the most common interactions with animals occur through the lens of a screen, distanced, commodified, and sanitized for human pleasure? -Cary Wolfe, What is Posthumanism?",
+"The proliferation of images that reduce animals to symbols of human affection and desire—the cuteness of a dog in a viral video or the playful antics of a cat—works to displace the real relationality we might have with them. This infantilization and commodification of animals in media is part of the ongoing alienation of our engagements with the species we share the planet with.  -Donna Haraway",
+"Cuteness has become an economic force in itself, especially on social media. Animals are often used by corporations to generate emotional responses in consumers, turning them into consumable and emotional objects. This reduction of animals to 'products' serves both a cultural and economic function, allowing us to connect with animals only through the lens of what they represent to us—affection, entertainment, or affect. -Sarah Banet-Weiser",
+"The cuteness of an animal online—whether it’s a pet or a wild animal in a viral video—has nothing to do with its ecological reality. Animals become part of a hyperobject in digital media, where their physical existence is dissolved into endless images that serve no other purpose than to be consumed. -Timothy Morton, Hyperobjects",
+"The meme, in its digital form, functions as a cultural unit that can be easily consumed, shared, and transformed. Animal memes, often designed around their cuteness, humor, or relatability, provide a way to engage with audiences across cultures and demographics. In a digital world of viral content, animals function as avatars because they are instantly recognizable and emotionally engaging, making them easier to commodify and circulate. -Lev Manovich", 
+"Animals in memes serve as avatars for human experiences. Whether it’s a grumpy cat, a dog in an awkward situation, or a cheerful puppy, animals in memes are transformed into familiar avatars that reflect human emotional experiences and social contexts. They become proxies for human behavior, allowing people to project their feelings, desires, or critiques onto the animal figure. -Milan Katic",
+"The digital landscape, where animals appear as memes, viral content, and icons, is no different from the medieval bestiary in one sense. Both serve as moral spaces where animals are reduced to symbols of human ideas—whether it/’s the innocence of a kitten or the strength of a lion. The difference is that the medieval bestiary was grounded in spiritual or moral teaching, while today, animals serve as vehicles for entertainment or marketing, shaping our perception through an almost constant stream of content. -Geoffrey C. Bowker",
+"When we see an animal in a meme, it is hard to decouple the digital image from the projected emotions we associate with it—cuteness, humor, love. Animals, in these contexts, function as avatars for human psychic needs, which distances us from the ecological reality of their existence. It is much like the medieval bestiary, where the animal was rendered as an object to teach moral lessons or symbolize human traits. -Timothy Morton, Hyperobjects",
+
+
+    ];
+
+    // Function to generate a random quote
+    function generateQuote() {
+      const randomIndex = Math.floor(Math.random() * quotes.length);
+      document.getElementById("phrase").innerText = quotes[randomIndex];
+    }
+  </script>
+</body>
+</html>
