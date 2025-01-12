@@ -46,22 +46,23 @@
       border-radius: 10px;
       text-align: center;
       color: black;
-      background-color: transparent; /* Optional: Adds a subtle background */
+      background-color: rgba(255, 255, 255, 0.5); /* Subtle background with transparency */
     }
 
     button {
       padding: 10px 20px;
       font-size: 1.2em;
-      background-color: transparent;
+      background-color: rgba(255, 255, 255, 0.3);
       color: white;
-      border: none;
+      border: 1px solid white;
       border-radius: 5px;
       cursor: pointer;
       margin-bottom: 40px;
+      transition: background-color 0.3s ease;
     }
 
     button:hover {
-      background-color: transparent;
+      background-color: rgba(255, 255, 255, 0.6);
     }
 
     /* Media query for smaller screens (max-width: 600px) */
@@ -84,7 +85,12 @@
         font-size: 0.9em; /* Adjusted button size */
         padding: 8px 15px;
       }
-footer p { font-size: 0.8em; color: #444; margin-top: 20px; }
+
+      footer p {
+        font-size: 0.8em;
+        color: #444;
+        margin-top: 20px;
+      }
     }
   </style>
 </head>
@@ -99,18 +105,15 @@ footer p { font-size: 0.8em; color: #444; margin-top: 20px; }
   <footer>
     <p>Compiled for Pratt PIC310 Bestiary. Many of these statements are quotes but a few are just summarizations. Best effort was made for attribution. Jan 2025</p>
   </footer>
-</body>
-</html>
-
 
   <script>
     // Array of quotes
     const quotes = [
       "Myth transforms history into nature.<br>-Roland Barthes",
-    "The animal becomes a visual shorthand, a symbol whose complexity is flattened for the sake of communication.<br>-Jonathan Burt",
-    "In contemporary culture, the animal often serves as a stand-in for human virtues, vices, and fantasies, erasing its own reality.<br>-Steve Baker, <I>Picturing the Beast</i>",
-    "The commodification of the animal denies its individuality, making it a vessel for human projections.<br>-Donna Haraway",
-    "Once a friend came to visit and said, looking out on the soothing view; 'and it would have to be a white horse; the very image of freedom'. And I thought, yes, the animals are forced to become for us merely ‘images’ of what they once so beautifully expressed.<br>-Alice Walker,<i>‘Am I Blue?’</i>",
+      "The animal becomes a visual shorthand, a symbol whose complexity is flattened for the sake of communication.<br>-Jonathan Burt",
+      "In contemporary culture, the animal often serves as a stand-in for human virtues, vices, and fantasies, erasing its own reality.<br>-Steve Baker, <i>Picturing the Beast</i>",
+      "The commodification of the animal denies its individuality, making it a vessel for human projections.<br>-Donna Haraway",
+      "Once a friend came to visit and said, looking out on the soothing view; 'and it would have to be a white horse; the very image of freedom'. And I thought, yes, the animals are forced to become for us merely ‘images’ of what they once so beautifully expressed.<br>-Alice Walker, <i>Am I Blue?</i>"
 "Of course, the behavior of lions may be the least interesting thing about them. In the way of symbols, lions are pretty near the top of the tree. But would anyone have followed Richard the Lionhart if they had known how similar lions’ behavior is to that of the common house cat?<br>-Justin Cartwright",
 "It was a comment on human nature that the concept of ‘animality’ was devised.<br>-Keith Thomas",
 "As I grew up I became more and more bewildered by the way people used to speak and think about animals, and I began to wonder, first in childish terms and later as a university educated adult, how on earth our society had arrived at its subject-object attitude toward animals. Contrary to current notions about humans and animals I never once felt myself to be a superior human subject dealing with an inferior and passive animal object.<br>-Barbara Noske, <i>Humans and Other Animals</i>",
@@ -188,14 +191,13 @@ footer p { font-size: 0.8em; color: #444; margin-top: 20px; }
 "Moo Deng, a tender hippopotamus who is but two months old, is the protagonist of any story you want to tell. She’s you, she/’s me, she/’s All Of Us wallowing around in the mud just trying to cope. I think that’s worth keeping in mind whenever something moves culture. Next time you want to create something with staying power, consider- How is that image, idea, song, video, or meme helping people express something about themselves they didn/’t have the tools to express before?<br>-Harris Sockel, <i>Moo Deng, or how memes work<i/>",
 "Merry Christmas, ya filthy animal.<br>-Kevin McAllister, <i>Home Alone<i/>",
 
-
-
     ];
 
-    // Function to generate a random quote
+    // Function to generate a new quote
     function generateQuote() {
+      const phraseDiv = document.getElementById('phrase');
       const randomIndex = Math.floor(Math.random() * quotes.length);
-      document.getElementById("phrase").innerHTML = quotes[randomIndex];
+      phraseDiv.innerHTML = quotes[randomIndex];
     }
   </script>
 </body>
