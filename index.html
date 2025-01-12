@@ -84,23 +84,31 @@
         font-size: 0.9em; /* Adjusted button size */
         padding: 8px 15px;
       }
+footer p { font-size: 0.8em; color: #444; margin-top: 20px; }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>A BESTIARY of<br>THOUGHTS</h1>
+    <h1>A BESTIARY of<br>THOUGHT</h1>
     <h2>A tool for thinking about animals</h2>
   </header>
   <div id="phrase">Welcome</div>
-  <button onclick="generateQuote()">🐅 Click for a New Thought 🐊</button>
+  <button onclick="generateQuote()">🐘 Click for a New Thought 🐊</button>
+
+  <footer>
+    <p>Compiled for Pratt PIC310 Bestiary. Many of these statements are quotes but a few are just summarizations. Best effort was made for attribution. Jan 2025</p>
+  </footer>
+</body>
+</html>
+
 
   <script>
     // Array of quotes
     const quotes = [
       "Myth transforms history into nature.<br>-Roland Barthes",
     "The animal becomes a visual shorthand, a symbol whose complexity is flattened for the sake of communication.<br>-Jonathan Burt",
-    "In contemporary culture, the animal often serves as a standin for human virtues, vices, and fantasies, erasing its own reality.<br>-Steve Baker, <I>Picturing the Beast</i>",
+    "In contemporary culture, the animal often serves as a stand-in for human virtues, vices, and fantasies, erasing its own reality.<br>-Steve Baker, <I>Picturing the Beast</i>",
     "The commodification of the animal denies its individuality, making it a vessel for human projections.<br>-Donna Haraway",
     "Once a friend came to visit and said, looking out on the soothing view; 'and it would have to be a white horse; the very image of freedom'. And I thought, yes, the animals are forced to become for us merely ‘images’ of what they once so beautifully expressed.<br>-Alice Walker,<i>‘Am I Blue?’</i>",
 "Of course, the behavior of lions may be the least interesting thing about them. In the way of symbols, lions are pretty near the top of the tree. But would anyone have followed Richard the Lionhart if they had known how similar lions’ behavior is to that of the common house cat?<br>-Justin Cartwright",
@@ -114,14 +122,14 @@
 "If you want to clear out a room of Derrideans, mention Beatrix Potter without sneering.<br>-Ursula K LeGuin",
 "Animals quite obviously cannot and do not represent themselves to human viewers. It is man who defines and represents them, and he can in no sense claim to achieve a true representation of any particular animal; it merely reflects his own concerns.<br>-Bob Mullan & Garry Marvin, <i>Zoo Culture</i>",
 "A \'feral\' animal is one that exists in an ecosystem where they are considered out of place. Because of this, feral animal voices are often described as “noise.”<br>-Kristine Hill, <i>Uncivilized Behaviors</i>",
-"Neoteny refers to a condition in which there is retention of youthful characteristics in adult form. Large eyes, rounded cheeks, short limbs result in a \‘lovable\’ object. Doll and toy manufacturers intuitively grasped this \‘cuteness\’ principle long ago in relation to animal products. -Steve Baker, Picturing the Beast",
+"Neoteny refers to a condition in which there is retention of youthful characteristics in adult form. Large eyes, rounded cheeks, short limbs result in a \‘lovable\’ object. Doll and toy manufacturers intuitively grasped this \‘cuteness\’ principle long ago in relation to animal products.<br>-Steve Baker, <i>Picturing the Beast</i>",
 "Animals are preserved solely for human benefit, because human beings have decided they want them to exist for human pleasure.<br>-Bob Mullan and Garry Marvin, <i>Zoo Culture</i>",
 "A real crocodile can be found in the zoo and as a rule it is dozing or hiding, but Disneyland tells us that faked nature corresponds much more to our daydream demands.<br>-Umberto Eco",
 "Neither Disneyland or the zoo will satisfy the demand for a morally or politically correct image of animals, an image of animals as they should be seen, of animals running free in our imaginary mythical wild.<br>-Umberto Eco",
 "We\’ve had a very arrogant assumption of human superiority and I think that\’s what we’ve got to change.<br>-Jane Goodall",
-"In the past, families of all classes kept domestic animals because they served a useful purpose guard dogs, hunting dogs, micekilling cats, and so on. The practice of keeping animals regardless of their usefulness, the keeping, exactly, of pets (in the 16th century the word usually referred to a lamb raised by had) is a modern innovation, and, on the social scale on which it exists today, is unique. It is part of that universal but personal withdrawal into the private small family unit, decorated or furnished with mementoes from the outside world.<br>-John Berger, <i>Why Look at Animals?</i>",
+"In the past, families of all classes kept domestic animals because they served a useful purpose guard dogs, hunting dogs, mice-killing cats, and so on. The practice of keeping animals regardless of their usefulness, the keeping, exactly, of pets (in the 16th century the word usually referred to a lamb raised by had) is a modern innovation, and, on the social scale on which it exists today, is unique. It is part of that universal but personal withdrawal into the private small family unit, decorated or furnished with mementoes from the outside world.<br>-John Berger, <i>Why Look at Animals?</i>",
 "Animals are always observed. The fact that they can observe us has lost all significance.<br>-John Berger, <i>Why Look at Animals?</i>",
-"Animals are objects of our everextending knowledge. What we know about the, is an index of our power, and thus an index of what separates us from the. The more we know, the further away they are.<br>-John Berger, <i>Why Look at Animals?</i>",
+"Animals are objects of our ever-extending knowledge. What we know about the animal, is an index of our power, and thus an index of what separates us from the. The more we know, the further away they are.<br>-John Berger, <i>Why Look at Animals?</i>",
 "Everywhere animals disappear. In zoos they constitute the living monument to their own disappearance.<br>-John Berger, <i>Why Look at Animals?</i>",
 "The belief that \'animals\' are superior or inferior to humans because they live in an eternal now is untrue, because no being lives in a now.<br>-Timothy Morton",
 "All beings are equal, but some beings are more equal than others.<br>-Timothy Morton",
@@ -132,7 +140,7 @@
 "We can understand, too, that natural species are chosen not because they are 'good to eat' [bonnes à manger] but because they are 'good to think' [bonnes à penser].<br>-Claude Levi-Strauss, <i>Totemism</i>",
 "Haribo\'s Gummi bears are junk food for children, but they are also a story about bears, about nature, and about ourselves.<br>Andrew McCumber and Patrick Neil Dryden, <i>The Bestiary in the Candy Aisle</i>",
 "The bestiary in its original form is gone, but contemporary culture continues to catalog animals and in so doing assign them meaning, though that meaning making may go unnoticed.<br>-Andrew McCumber and Patrick Neil Dryden, <i>The Bestiary in the Candy Aisle</i>",
-"Ever since 1902, when animal crackers were first mass-produced by the National Biscuit Company, the food-industrial complex has been targeting children with edible items fashioned as covetable objects.<br>-Kalman and Hall, </i>Eat Me<i>",
+"Ever since 1902, when animal crackers were first mass-produced by the National Biscuit Company, the food-industrial complex has been targeting children with edible items fashioned as covetable objects.<br>-Kalman and Hall, <i>Eat Me</i>",
 "Nabisco once released a limited edition \'Endangered Collection\' of Animal Crackers featuring Komodo dragons, peregrine falcons, Hawaiian monk seals, and Bactrian camels. When asked whether there was \'something weird about eating these near sacred animals,\' a product manager replied:\'Of course, what do people like about Animal Crackers? Biting off the heads! Our hope was that children will line them up, match them up with the names on the box, learn about them, and then decapitate them.\'<br>-Andrew McCumber and Patrick Neil Dryden, <i>The Bestiary in the Candy Aisle</i>",
 "To see a jaguar is to be seen by a jaguar. Seeing is always reciprocal, and in this reciprocity, a certain form of personhood emerges.<br>-Eduardo Kohn, <i>How Forests Think</i>",
 "An anthropology beyond the human must not only decenter the human but also learn to think with other forms of life that are themselves thinking beings.<br>-Eduardo Kohn, <i>How Forests Thin</i>k",
@@ -173,6 +181,14 @@
 "Animals in memes serve as avatars for human experiences. Whether it’s a grumpy cat, a dog in an awkward situation, or a cheerful puppy, animals in memes are transformed into familiar avatars that reflect human emotional experiences and social contexts. They become proxies for human behavior, allowing people to project their feelings, desires, or critiques onto the animal figure.<br>-Milan Katic",
 "The digital landscape, where animals appear as memes, viral content, and icons, is no different from the medieval bestiary in one sense. Both serve as moral spaces where animals are reduced to symbols of human ideas—whether it/’s the innocence of a kitten or the strength of a lion. The difference is that the medieval bestiary was grounded in spiritual or moral teaching, while today, animals serve as vehicles for entertainment or marketing, shaping our perception through an almost constant stream of content.<br>-Geoffrey C. Bowker",
 "When we see an animal in a meme, it is hard to decouple the digital image from the projected emotions we associate with it—cuteness, humor, love. Animals, in these contexts, function as avatars for human psychic needs, which distances us from the ecological reality of their existence. It is much like the medieval bestiary, where the animal was rendered as an object to teach moral lessons or symbolize human traits.<br>-Timothy Morton, <i>Hyperobjects</i>",
+"Depending on the amount of care, Tamagotchi evolves into various kinds of shapes from egg to adult. If we neglect it, then when it reaches the end of its lifespan, the creature dies, like a /'real/' animal. It is however possible to push the reset button, to begin a new life again.<br>-Maya Takahashi, <i>Understanding Human Relationships with Virtual Pets through Visual Communication<i/>,"
+"Virtual pets like Tamagotchi mimic the experience of owning a real animal but without the unpredictability or ethical dilemmas. They reveal how much of our bond with animals is rooted in caregiving behaviors rather than mutual understanding.<br>-Jean-Loup Rault , <i>Pets in the Digital Age: Live, Robot, or Virtual?<i/>"
+"By conditioning us to care for something synthetic, Tamagotchi and similar virtual pets raise questions about whether we are eroding our capacity to empathize with living creatures.<br>-Sherry Turkle, <i>Alone Together: Why We Expect More from Technology and Less from Each Other<i/>",
+"Virtual pets function as a way to experience caregiving while circumventing the ethical questions associated with real animals, such as cruelty, neglect, or death. This detachment risks trivializing the complexities of human-animal relationships.<br>-Anne Balsamo, <i>Technologies of the Gendered Body: Reading Cyborg Women<i/>",
+"Moo Deng, a tender hippopotamus who is but two months old, is the protagonist of any story you want to tell. She’s you, she’s me, she’s All Of Us wallowing around in the mud just trying to cope. I think that’s worth keeping in mind whenever something moves culture. Next time you want to create something with staying power, consider- How is that image, idea, song, video, or meme helping people express something about themselves they didn’t have the tools to express before?<br>-Harris Sockel, <i>Moo Deng, or: how memes work<i/>",
+"Merry Christmas, ya filthy animal.<br>-Kevin McAllister, <i>Home Alone<i/>",
+
+
 
     ];
 
