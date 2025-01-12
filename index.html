@@ -5,47 +5,50 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bestiary Weekly Thought</title>
   <style>
+    /* General styles for all devices */
     body {
       font-family: Helvetica, sans-serif;
-      text-align: center;
       margin: 0;
       padding: 20px;
-      height: 100vh; /* Ensures the body takes the full viewport height */
       display: flex;
       flex-direction: column;
-      justify-content: space-between; /* Space out items */
-      align-items: center; /* Centers the content horizontally */
+      justify-content: space-between;
+      align-items: center;
+      height: 100vh;
       background: linear-gradient(135deg, #94c098, #fe5347);
-      color: white;
+      color: black;
     }
-header {
+
+    header {
       text-align: center;
       margin-top: 10px; /* Brings title close to the top */
     }
+
     h1 {
-      font-size: 7em; /* Large title size */
-      letter-spacing: 1px; /* Space between letters */
-      line-height: .9; /* Adjusts line spacing */
-      margin: 3px 0;
+      font-size: 4em; /* Default size for larger screens */
+      letter-spacing: 1px;
+      line-height: 0.9;
+      margin: 10px 0;
     }
+
     h2 {
-      font-size: 1.4em; /* Smaller than the main title */
-      font-weight: normal; /* Optional: make it less bold */
-      color: #white; /* A softer color than the main title */
-margin: 0;      
-margin-bottom: 20px; /* Adds space below the subtitle */
+      font-size: 1.4em;
+      font-weight: normal;
+      margin: 0;
+      margin-bottom: 20px; /* Adds space below the subtitle */
     }
+
     #phrase {
-font-size: 1.2em;
+      font-size: 1.2em;
       margin: 20px auto;
       padding: 20px;
-      border: 0px solid #ccc;
+      max-width: 600px;
       border-radius: 10px;
-      background-color: transparent;
-      color: ;
-      max-width: 600px; /* Limits the width for better readability */
-      text-align: center; /* Centers text within the quote box */
+      text-align: center;
+      color: black;
+      background-color: transparent; /* Optional: Adds a subtle background */
     }
+
     button {
       padding: 10px 20px;
       font-size: 1em;
@@ -54,18 +57,41 @@ font-size: 1.2em;
       border: none;
       border-radius: 5px;
       cursor: pointer;
-margin: 20px auto 40px;
+      margin-bottom: 40px;
     }
+
     button:hover {
-      background-color: #white;
+      background-color: transparent;
+    }
+
+    /* Media query for smaller screens (max-width: 600px) */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2.5em; /* Adjusted title size for mobile */
+      }
+
+      h2 {
+        font-size: 1em; /* Adjusted subtitle size */
+      }
+
+      #phrase {
+        font-size: 1em; /* Adjusted font size */
+        padding: 15px; /* Reduced padding */
+        max-width: 90%; /* Ensures quote box fits on smaller screens */
+      }
+
+      button {
+        font-size: 0.9em; /* Adjusted button size */
+        padding: 8px 15px;
+      }
     }
   </style>
 </head>
 <body>
-<header>
-  <h1> BESTIARY<br>THOUGHTS</h1>
-<h2>A tool for thinking about animals</h2>
-</header>
+  <header>
+    <h1>BESTIARY<br>THOUGHTS</h1>
+    <h2>A tool for thinking about animals</h2>
+  </header>
   <div id="phrase">Welcome</div>
   <button onclick="generateQuote()">Click for a New Thought 🐊</button>
 
@@ -147,7 +173,6 @@ margin: 20px auto 40px;
 "Animals in memes serve as avatars for human experiences. Whether it’s a grumpy cat, a dog in an awkward situation, or a cheerful puppy, animals in memes are transformed into familiar avatars that reflect human emotional experiences and social contexts. They become proxies for human behavior, allowing people to project their feelings, desires, or critiques onto the animal figure. -Milan Katic",
 "The digital landscape, where animals appear as memes, viral content, and icons, is no different from the medieval bestiary in one sense. Both serve as moral spaces where animals are reduced to symbols of human ideas—whether it/’s the innocence of a kitten or the strength of a lion. The difference is that the medieval bestiary was grounded in spiritual or moral teaching, while today, animals serve as vehicles for entertainment or marketing, shaping our perception through an almost constant stream of content. -Geoffrey C. Bowker",
 "When we see an animal in a meme, it is hard to decouple the digital image from the projected emotions we associate with it—cuteness, humor, love. Animals, in these contexts, function as avatars for human psychic needs, which distances us from the ecological reality of their existence. It is much like the medieval bestiary, where the animal was rendered as an object to teach moral lessons or symbolize human traits. -Timothy Morton, Hyperobjects",
-
 
     ];
 
