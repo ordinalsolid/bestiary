@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+In<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -21,11 +21,11 @@
 
     header {
       text-align: center;
-      margin-top: 10px; /* Brings title close to the top */
+      margin-top: 10px;
     }
 
     h1 {
-      font-size: 4em; /* Default size for larger screens */
+      font-size: 4em;
       letter-spacing: 1px;
       line-height: 0.9;
       margin: 10px 0;
@@ -34,8 +34,7 @@
     h2 {
       font-size: 1.4em;
       font-weight: normal;
-      margin: 0;
-      margin-bottom: 20px; /* Adds space below the subtitle */
+      margin: 0 0 20px;
     }
 
     #phrase {
@@ -46,7 +45,7 @@
       border-radius: 10px;
       text-align: center;
       color: black;
-      background-color: transparent; /* Subtle background with transparency */
+      background-color: transparent;
     }
 
     button {
@@ -54,7 +53,7 @@
       font-size: 1.2em;
       background-color: transparent;
       color: white;
-      border: 0px transparent;
+      border: none;
       border-radius: 5px;
       cursor: pointer;
       margin-bottom: 40px;
@@ -65,28 +64,34 @@
       background-color: rgba(255, 255, 255, 0.6);
     }
 
+    footer {
+      text-align: center;
+      font-size: 0.9em;
+      color: #555;
+    }
+
     /* Media query for smaller screens (max-width: 600px) */
     @media (max-width: 600px) {
       h1 {
-        font-size: 2.5em; /* Adjusted title size for mobile */
+        font-size: 2.5em;
       }
 
       h2 {
-        font-size: 1em; /* Adjusted subtitle size */
+        font-size: 1em;
       }
 
       #phrase {
-        font-size: 1em; /* Adjusted font size */
-        padding: 15px; /* Reduced padding */
-        max-width: 90%; /* Ensures quote box fits on smaller screens */
+        font-size: 1em;
+        padding: 15px;
+        max-width: 90%;
       }
 
       button {
-        font-size: 0.9em; /* Adjusted button size */
+        font-size: 0.9em;
         padding: 8px 15px;
       }
 
-      footer p {
+      footer {
         font-size: 0.8em;
         color: #444;
         margin-top: 20px;
@@ -100,7 +105,9 @@
     <h2>A tool for thinking about animals</h2>
   </header>
   <div id="phrase">Welcome</div>
-  <button onclick="generateQuote()">🐘 Click for a New Thought 🐊</button>
+  <button onclick="generateQuote()" aria-label="Click to generate a new thought about animals">
+    🐘 Click for a New Thought 🐊
+  </button>
 
   <footer>
     <p>Compiled for Pratt PIC310 Bestiary. Many of these statements are quotes but a few are just summarizations. Best effort was made for attribution. Jan 2025</p>
@@ -111,10 +118,10 @@
     const quotes = [
       "Myth transforms history into nature.<br>-Roland Barthes",
       "The animal becomes a visual shorthand, a symbol whose complexity is flattened for the sake of communication.<br>-Jonathan Burt",
-      "In contemporary culture, the animal often serves as a standin for human virtues, vices, and fantasies, erasing its own reality.<br>-Steve Baker, <i>Picturing the Beast</i>",
+      "In contemporary culture, the animal often serves as a stand-in for human virtues, vices, and fantasies, erasing its own reality.<br>-Steve Baker, <i>Picturing the Beast</i>",
       "The commodification of the animal denies its individuality, making it a vessel for human projections.<br>-Donna Haraway",
-      "Once a friend came to visit and said, looking out on the soothing view; \'and it would have to be a white horse; the very image of freedom\'. And I thought, yes, the animals are forced to become for us merely \‘images\’ of what they once so beautifully expressed.<br>-Alice Walker, <i>Am I Blue?</i>"
-"Of course, the behavior of lions may be the least interesting thing about them. In the way of symbols, lions are pretty near the top of the tree. But would anyone have followed Richard the Lionhart if they had known how similar lions’ behavior is to that of the common house cat?<br>-Justin Cartwright",
+      "Once a friend came to visit and said, looking out on the soothing view; 'and it would have to be a white horse; the very image of freedom'. And I thought, yes, the animals are forced to become for us merely 'images' of what they once so beautifully expressed.<br>-Alice Walker, <i>Am I Blue?</i>",
+      "Of course, the behavior of lions may be the least interesting thing about them. In the way of symbols, lions are pretty near the top of the tree. But would anyone have followed Richard the Lionheart if they had known how similar lions’ behavior is to that of the common house cat?<br>-Justin Cartwright",
 "It was a comment on human nature that the concept of \‘animality\’ was devised.<br>-Keith Thomas",
 "As I grew up I became more and more bewildered by the way people used to speak and think about animals, and I began to wonder, first in childish terms and later as a university educated adult, how on earth our society had arrived at its subject object attitude toward animals. Contrary to current notions about humans and animals I never once felt myself to be a superior human subject dealing with an inferior and passive animal object.<br>-Barbara Noske, <i>Humans and Other Animals</i>",
 "Sentiments about animals are typically projections of attitudes to humans; that the contrasting of humans and animals invariably serves as an analogy for the relation of those regarded by a particular society as insiders or outsiders; and that some societies have arrogantly appropriated the name \‘human\’ for themselves while giving neighboring groups derogatory animal names. <br>-Steve Baker, <i>Picturing the Beast</i>",
