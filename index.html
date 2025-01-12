@@ -98,17 +98,17 @@
   <script>
     // Array of quotes
     const quotes = [
-      "Myth transforms history into nature.  -Roland Barthes",
-    "The animal becomes a visual shorthand, a symbol whose complexity is flattened for the sake of communication.  -Jonathan Burt",
-    "In contemporary culture, the animal often serves as a standin for human virtues, vices, and fantasies, erasing its own reality.  -Steve Baker, Picturing the Beast",
-    "The commodification of the animal denies its individuality, making it a vessel for human projections. -Donna Haraway",
-    "Once a friend came to visit and said, looking out on the soothing view; 'and it would have to be a white horse; the very image of freedom'. And I thought, yes, the animals are forced to become for us merely ‘images’ of what they once so beautifully expressed. -Alice Walker, ‘Am I Blue?’",
-"Of course, the behavior of lions may be the least interesting thing about them. In the way of symbols, lions are pretty near the top of the tree. But would anyone have followed Richard the Lionhart if they had known how similar lions’ behavior is to that of the common house cat? -Justin Cartwright",
-"It was a comment on human nature that the concept of ‘animality’ was devised. -Keith Thomas",
+      "Myth transforms history into nature.<br>-Roland Barthes",
+    "The animal becomes a visual shorthand, a symbol whose complexity is flattened for the sake of communication.<br>-Jonathan Burt",
+    "In contemporary culture, the animal often serves as a standin for human virtues, vices, and fantasies, erasing its own reality.<br>-Steve Baker, <I>Picturing the Beast</i>",
+    "The commodification of the animal denies its individuality, making it a vessel for human projections.<br>-Donna Haraway",
+    "Once a friend came to visit and said, looking out on the soothing view; 'and it would have to be a white horse; the very image of freedom'. And I thought, yes, the animals are forced to become for us merely ‘images’ of what they once so beautifully expressed.<br>-Alice Walker,<i>‘Am I Blue?’</i>",
+"Of course, the behavior of lions may be the least interesting thing about them. In the way of symbols, lions are pretty near the top of the tree. But would anyone have followed Richard the Lionhart if they had known how similar lions’ behavior is to that of the common house cat?<br>-Justin Cartwright",
+"It was a comment on human nature that the concept of ‘animality’ was devised.<br>-Keith Thomas",
 "As I grew up I became more and more bewildered by the way people used to speak and think about animals, and I began to wonder, first in childish terms and later as a university educated adult, how on earth our society had arrived at its subject-object attitude toward animals. Contrary to current notions about humans and animals I never once felt myself to be a superior human subject dealing with an inferior and passive animal object. -Barbara Noske, Humans and Other Animals",
 "Sentiments about animals are typically projections of attitudes to humans; that the contrasting of humans and animals invariably serves as an analogy for the relation of those regarded by a particular society as insiders or outsiders; and that some societies have arrogantly appropriated the name ‘human’ for themselves while giving neighboring groups derogatory animal names. -Steve Baker, Picturing the Beast",
 "It seems modern Western culture more than any other emphasizes the ‘Otherness’ of the nonhuman. By drawing a sharp dividing line between human and nonhuman, a vast gap is created between subject (the free acting human agent) and the object (the passive acted upon thing).",
-"The idea that humans are metaphorically indispensable to humankind has certain attractions, because it proposes a relation between humans and animals which is not necessarily and exploitative one, nor one which necessarily works by denigrating the animals. -John Berger, Animals as Metaphor",
+"The idea that animals are metaphorically indispensable to humankind has certain attractions, because it proposes a relation between humans and animals which is not necessarily and exploitative one, nor one which necessarily works by denigrating the animals. -John Berger, Animals as Metaphor",
 "Sometimes animals are idealized as models of order and morality. Sometimes animals are represented at the Other, the Beast, the Brute, the model of disorder and the way things should not be done. -Steve Baker, Picturing the Beast", 
 "The term animal is associated with uncivilized behavior and socially disapproved behavior. Criminals, hoodlums, and punks are described as animals that deserve to be punished if justice is to prevail. Animal represents a violation of social norms. -Steve Baker, Picturing the Beast",
 "If you want to clear out a room of Derrideans, mention Beatrix Potter without sneering. -Ursula K LeGuin",
@@ -146,7 +146,7 @@
 "A stuffed animal, for instance, is not just a memento of nature; it becomes an idealized version, frozen in time, and in many cases, more alive in death than it ever was in life. -Umberto Eco",
 "Imaginary animals are not less real than their counterparts in the natural world; they inhabit the landscapes of our collective psyche, serving as mirrors of human creativity and fear. -Umberto Eco",
 "The uncanny valley, where fake animals (like CGI characters in films or robotic animals) are close to the real thing but not quite right, creates a profound dissonance. It speaks to our anxieties about artificial life where humanity\'s technological interventions into nature (like cloning, genetic modification, or bioengineering) blur the line between \'real\' and \'fake\' animals. -Mark Fisher",
-"What we call nature is a story we tell about the world, an ongoing and inevitably incomplete narrative that is not limited by the human experience. -Barbara Herrnstein Smith",
+"What we call nature is a story we tell about the world, an ongoing and inevitably incomplete narrative that is not limited by the human experience. -Barbara Hernstein Smith",
 "Animals are the metaphors we use to express ourselves. In them, we see our best and worst qualities, our desires and fears. -Umberto Eco",
 "We are in the Anthropocene, and as a result, many species of animals are dying out. But the Anthropocene is not just the end of something—it's a new beginning, and in this new world, the fate of animals and humans will be intertwined. -Timothy Morton",
 "Animals are uncanny because they remind us of what we are, but also of what we are not. We think we know them, but when we look closely, they are always strange, always other. -Timothy Morton",
@@ -179,7 +179,7 @@
     // Function to generate a random quote
     function generateQuote() {
       const randomIndex = Math.floor(Math.random() * quotes.length);
-      document.getElementById("phrase").innerText = quotes[randomIndex];
+      document.getElementById("phrase").innerHTML = quotes[randomIndex];
     }
   </script>
 </body>
