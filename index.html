@@ -68,7 +68,17 @@
       font-size: 0.9em;
       color: #555;
     }
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: auto; /* Push content above to the top */
+  padding-bottom: 20px; /* Space between the button and footer text */
+}
 
+button {
+  margin-bottom: 10px; /* Space above the footer */
+}
     /* Media query for smaller screens (max-width: 600px) */
     @media (max-width: 600px) {
       h1 {
@@ -104,13 +114,12 @@
     <h2>A tool for thinking about how humanity thinks about animals.</h2>
   </header>
   <div id="phrase">Generate a statement by clicking the button below. After a moment of consideration, write a short response. Do you agree or disagree with the statement? Is the concept familiar to you? Does it correspond with your personal experience? Can you think of examples that relate?</div>
-  <button onclick="generateQuote()" aria-label="CLICK to generate a new thought about animals">
-    🐊 <b>CLICK</b> 🦓
-  </button>
-
+<div class="footer-container">
+  <button onclick="generateQuote()">🐘 Click for a New Thought 🐊</button>
   <footer>
-    <p>Compiled for Pratt's PIC310 Bestiary class. Many of these statements are quotes but a few are summarizations. Best effort was made for attribution.<br>-Jason Urban, January 2025</p>
+    <p>Compiled for Pratt PIC310 Bestiary. Many of these statements are quotes but a few are just summarizations. Best effort was made for attribution. Jan 2025</p>
   </footer>
+</div>
 
   <script>
     // Array of quotes
