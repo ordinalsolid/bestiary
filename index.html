@@ -25,25 +25,33 @@
 
     h1 {
       font-size: 4em;
+		color: black;
       letter-spacing: 1px;
       line-height: 0.9;
-      margin: 10px 0;
-    }
-
+      margin: 0px 0;
+    } 
     h2 {
       font-size: 1.4em;
+		color: black;
       font-weight: normal;
-      margin: 0 0 20px;
+      margin: 0 0 5px;
     }
-
+	  .divider {
+  width: 100%; /* Adjust width to fit your design */
+  height: 2px; /* Thickness of the border */
+  background-color: black; /* Color of the border */
+  border: none; /* Removes the default border style */
+  margin: 5px auto; /* Adds spacing above and below, and centers the divider */
+  border-radius: 10px; /* Adds a rounded edge to the divider */
+}
     #phrase {
       font-size: 1.2em;
       margin: 20px auto;
       padding: 20px;
       max-width: 600px;
       border-radius: 10px;
-      text-align: center;
-      color: black;
+      text-align: left;
+      color: white;
       background-color: transparent;
     }
 
@@ -84,11 +92,9 @@ button {
       h1 {
         font-size: 2.5em;
       }
-
       h2 {
-        font-size: 1em;
-      }
-
+        font-size: 1em;    }
+	
       #phrase {
         font-size: 1em;
         padding: 15px;
@@ -111,7 +117,9 @@ button {
 <body>
   <header>
     <h1>A BESTIARY of<br>THOUGHT</h1>
-    <h2>A tool for thinking about how humanity thinks about animals.</h2>
+    <h2>A tool for thinking about how humanity thinks about animals.</h2>	
+	  
+<hr class="divider">
   </header>
   <div id="phrase">Generate a statement by clicking the button below. After a moment of consideration, write a short response. Do you agree or disagree with the statement? Is the concept familiar to you? Does it correspond with your personal experience? Can you think of examples that relate?</div>
 <div class="footer-container">
