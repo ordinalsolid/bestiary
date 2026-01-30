@@ -3,144 +3,219 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>On Animals...</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Pirata+One&display=swap" rel="stylesheet">
+
   <style>
-    /* General styles for all devices */
+    /* PALETTE: 
+      Background: White
+      Ink: Black
+      Accent: Neon Yellow (#f4f90a)
+    */
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Avenir, sans-serif;
+      font-family: 'IM Fell English', serif;
       margin: 0;
-      padding: 5px;
+      padding: 0;
+      /* This ensures the footer stays at bottom */
+      min-height: 100vh;
+      min-height: 100dvh; /* Dynamic height for mobile browsers */
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       align-items: center;
-      height: 90vh;
-      background: linear-gradient(135deg, #94c098, #fe5347);
-      color: black;
+      background-color: #ffffff;
+      color: #000000;
+      /* Subtle paper grain texture */
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.08'/%3E%3C/svg%3E");
     }
 
+    /* --- TOP SECTION --- */
     header {
+      width: 100%;
       text-align: center;
-      margin-top: 5px;
+      padding: 20px 20px 0 20px;
     }
 
     h1 {
-      font-size: 5.5em;
-		color: black;
-      letter-spacing: 1px;
-      line-height: 0.9;
-      margin: 1px 0;
+      font-family: 'Pirata One', cursive;
+      /* Viewport Width unit makes it span the screen width */
+      font-size: 18vw; 
+      color: #000000;
+      line-height: 0.8;
+      margin: 0;
+      text-transform: uppercase;
+      letter-spacing: -2px;
+      width: 100%;
     } 
-    h2 {
-      font-size: 1.3
-		  em;
-		color: black;
 
-      font-weight: normal;
-      margin: 0 0 5px;
+    h2 {
+      font-family: 'IM Fell English', serif;
+      font-size: 1.5rem;
+      color: #000000;
+      font-weight: bold;
+      margin: 0;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      width: 100%;
+      /* Making it feel as wide as the header */
+      display: block;
+      padding-top: 10px;
     }
-	  .divider {
-  width: 100%; /* Adjust width to fit your design */
-  height: 2px; /* Thickness of the border */
-		  
-  background-color: black; /* Color of the border */
-  border: none; /* Removes the default border style */
-  margin: 5px auto; /* Adds spacing above and below, and centers the divider */
-  border-radius: 10px; /* Adds a rounded edge to the divider */
-}
-    #phrase {
-        font-size: 1.3em; 
-      margin: 20px auto;
+
+    .divider {
+      width: 100%;
+      height: 4px;
+      background-color: #000000;
+      border: none;
+      margin: 20px 0 0 0;
+    }
+
+    /* --- MIDDLE SECTION (THE QUOTE) --- */
+    #content-wrapper {
+      flex-grow: 1; /* Takes up all available space between header and footer */
+      display: flex;
+      align-items: center; /* Vertically centers the quote */
+      justify-content: center;
+      width: 100%;
+      max-width: 900px;
       padding: 20px;
-      max-width: 600px;
-      border-radius: 10px;
+    }
+
+    #phrase {
+      font-size: 2rem; 
+      line-height: 1.3;
       text-align: left;
-      color: #222222;
-      background-color: transparent;
+      color: #000000;
+    }
+
+    /* The Pilcrow */
+    #phrase::before {
+      content: "¶"; 
+      color: #000000;
+      font-family: 'Pirata One', cursive;
+      font-size: 1.2em;
+      margin-right: 15px;
+      float: left;
+      line-height: 0.9;
+      background-color: #f4f90a;
+      padding: 0 8px;
+    }
+
+    /* Links inside the quote */
+    #phrase a {
+      color: #000000;
+      text-decoration: none;
+      background: linear-gradient(to top, #f4f90a 40%, transparent 40%);
+      font-weight: bold;
+      transition: background 0.2s;
+    }
+    #phrase a:hover {
+      background: linear-gradient(to top, #f4f90a 100%, transparent 100%);
+    }
+
+    /* --- BOTTOM SECTION --- */
+    .footer-container {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-bottom: 30px;
+      background: linear-gradient(to top, #ffffff 80%, transparent); /* Fade out behind footer if content overlaps */
     }
 
     button {
-      padding: 10px 20px;
-      font-size: 1.2em;
-      background-color: transparent;
-      color: white;
+      padding: 15px 50px;
+      font-family: 'Pirata One', cursive;
+      font-size: 2rem;
+      background-color: #000000;
+      color: #ffffff;
       border: none;
-      border-radius: 5px;
+      border-radius: 0;
       cursor: pointer;
-      margin-bottom: 40px;
-      transition: background-color 0.3s ease;
+      margin-bottom: 15px;
+      transition: transform 0.1s ease, box-shadow 0.1s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
     button:hover {
-      background-color: rgba(255, 255, 255, 0.6);
+      background-color: #f4f90a;
+      color: #000000;
+      box-shadow: 6px 6px 0px #000000;
+      transform: translate(-3px, -3px);
+    }
+
+    button:active {
+      transform: translate(0, 0);
+      box-shadow: none;
     }
 
     footer {
       text-align: center;
-      font-size: 0.9em;
-      color: #555;
-		
+      font-size: 0.8rem;
+      color: #000000;
+      font-weight: bold;
+      max-width: 90%;
+      text-transform: uppercase;
     }
-.footer-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: auto; /* Push content above to the top */
-  padding-bottom: 20px; /* Space between the button and footer text */
-}
 
-button {
-  margin-bottom: 10px; /* Space above the footer */
-}
-    /* Media query for smaller screens (max-width: 600px) */
+    /* --- MOBILE RESPONSIVENESS --- */
     @media (max-width: 600px) {
       h1 {
-        font-size: 3.5em;
+        font-size: 17vw; /* Slightly smaller to prevent edge bleed */
       }
       h2 {
-        font-size: .8em;    }
-	
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+      }
       #phrase {
-        font-size: 1em;
-        padding: 15px;
-        max-width: 90%;
+        font-size: 1.4rem;
+        padding: 10px;
       }
-
       button {
-        font-size: 1em;
-        padding: 8px 15px;
+        font-size: 1.5rem;
+        padding: 12px 30px;
+        width: 90%;
       }
-
-      footer {
-        font-size: 0.8em;
-        color: #444;
-        margin-top: 20px;
+      .divider {
+        margin-top: 10px;
       }
     }
   </style>
 </head>
 <body>
+
+  <audio id="clickSound" src="click.mp3"></audio>
+
   <header>
     <h1>BEASTMODE</h1>
-    <h2>How humans think about animals.</h2>	
-	  
-<hr class="divider">
+    <h2>How humans think about animals</h2> 
+    <hr class="divider">
   </header>
-  <div id="phrase">Generate a statement by clicking the button below. After a moment of consideration, write a short response. Do you agree or disagree with the statement? Is the concept familiar to you? Does it correspond with your personal experience? Can you think of examples that relate?</div>
-<div class="footer-container">
-  <button onclick="generateQuote()">🐘 Click to Refresh 🐊</button>
-  <footer>
-    <p>Compiled for Pratt PIC310 Bestiary. Many of these statements are quotes but a few are just summarizations. Best effort was made for attribution. UPDATED August 2025</p>
-  </footer>
-</div>
+  
+  <div id="content-wrapper">
+    <div id="phrase">Generate a statement by clicking the button below. After a moment of consideration, write a short response. Do you agree or disagree with the statement? Is the concept familiar to you? Does it correspond with your personal experience? Can you think of examples that relate?</div>
+  </div>
+  
+  <div class="footer-container">
+    <button onclick="generateQuote()">Click to Refresh</button>
+    <footer>
+      <p>Compiled for Pratt PIC310 Bestiary. UPDATED August 2025</p>
+    </footer>
+  </div>
 
   <script>
-    // Array of quotes
     const quotes = [ 
+      "001<br><br>Myth transforms history into nature.<br><br>-Roland Barthes",
+      "002<br><br>The problem that arises for the study of animals in history is that treating the animal as an icon, paradoxically, places the animal outside history. The role is purely symbolic; it reflects historical processes without truly being part of them. Being detached from what might be called the historical dynamics of a culture makes it difficult to assess the manner in which animals influence these dynamics. <br><br>-Jonathan Burt, <a href='https://www.animalsandsociety.org/wp-content/uploads/2015/11/burt.pdf' target='_blank'><i>The Illumination of the Animal Kingdom:The Role of Light and Electricity in Animal Representation</i></a>",
 		
-"001<br><br>Myth transforms history into nature.<br><br>-Roland Barthes",
-
-"002<br><br>The problem that arises for the study of animals in history is that treating the animal as an icon, paradoxically, places the animal outside history. The role is purely symbolic; it reflects historical processes without truly being part of them. Being detached from what might be called the historical dynamics of a culture makes it difficult to assess the manner in which animals influence these dynamics. <br><br>-Jonathan Burt, <a href='https://www.animalsandsociety.org/wp-content/uploads/2015/11/burt.pdf' target='_blank'><i>The Illumination of the Animal Kingdom:The Role of Light and Electricity in Animal Representation</i></a>",
-
 "003<br><br>The animal becomes a visual shorthand, a symbol whose complexity is flattened for the sake of communication.<br><br>",
 
 "004<br><br>In contemporary culture, the animal often serves as a standin for human virtues, vices, and fantasies, erasing its own reality.<br><br>-Steve Baker, <i>Picturing the Beast: Animals, Identity, and Representation</i>",
@@ -361,17 +436,19 @@ button {
 
 "112<br><br>We are in the Anthropocene, and as a result, many species of animals are dying out. But the Anthropocene is not just the end of something—it’s a new beginning, and in this new world, the fate of animals and humans will be intertwined.<br><br>-Timothy Morton",
 
-
-		
     ];
 
-    // Function to generate a new quote
     function generateQuote() {
       const phraseDiv = document.getElementById('phrase');
       const randomIndex = Math.floor(Math.random() * quotes.length);
       phraseDiv.innerHTML = quotes[randomIndex];
+
+      const sound = document.getElementById("clickSound");
+      if (sound) {
+        sound.currentTime = 0; 
+        sound.play().catch(e => console.log("Interaction required for audio.", e));
+      }
     }
   </script>
 </body>
 </html>
-
